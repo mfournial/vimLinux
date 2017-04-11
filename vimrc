@@ -41,7 +41,9 @@ let NERDTreeMapActivateNode='<right>'
 let NERDTtreeShowHidden=1
 nmap <leader>n :NerdTreeToggle<CR>
 nmap <leader>j :NerdTreeFind<CR>
- 
+
+set noshowmode
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
  
@@ -61,8 +63,12 @@ let g:lightline = {
       \   'readonly': 'LightlineReadonly',
       \   'modified': 'LightlineModified'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 function! LightlineModified()
@@ -91,10 +97,10 @@ function! LightlineFugitive()
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-function! LightlineFugitive()
-  if exists("*fugitive#head")
-    let branch = fugitive#head()
-    return branch !=# '' ? '⭠ '.branch : ''
-  endif
-return ''
-endfunction
+" function! LightlineFugitive()
+"   if exists("*fugitive#head")
+"     let branch = fugitive#head()
+"     return branch !=# '' ? ''.branch : ''
+"   endif
+" return ''
+" endfunction

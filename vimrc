@@ -7,9 +7,7 @@ set nocompatible
 filetype on
 colorscheme monokai
 
-set guifont=Menlo\ Regular:18
-
-let g:Powerline_symbols='fancy'
+filetype plugin indent on
 
 set colorcolumn=80
 
@@ -26,28 +24,27 @@ set autoindent
 
 set number
 
+set hlsearch
+
 map <D-A-RIGHT> <C-w>l
 map <D-A-LEFT> <C-w>h
 map <D-A-DOWN> <C-w><C-w>
-map <D-A-UP> <C-w>w
-
-set hlsearch
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+map <D-A-UP> <C-w>W
 
 nnoremap <Leader><Leader> :e#<CR>
-
+ 
 execute pathogen#infect()
-
+ 
 noremap <Leader>r :CommandTFlush<CR>
-
+ 
 let NERDTreeMapActivateNode='<right>'
 let NERDTtreeShowHidden=1
 nmap <leader>n :NerdTreeToggle<CR>
 nmap <leader>j :NerdTreeFind<CR>
-
+ 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-
+ 
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -81,7 +78,6 @@ function! LightlineModified()
 endfunction
 
 function! LightlineReadonly()
-
   if &filetype == "help"
     return ""
   elseif &readonly

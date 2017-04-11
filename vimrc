@@ -1,8 +1,15 @@
+" mfournial VIM config file
+" is vim worth the time I put in it?
+" plus gonna have to do it on my Mac now -_-
+
+set nocompatible
+
 filetype on
-syntax on
 colorscheme monokai
 
-set guifont=Menlo\ Regular:h18
+set guifont=Menlo\ Regular:18
+
+let g:Powerline_symbols='fancy'
 
 set colorcolumn=80
 
@@ -17,9 +24,81 @@ set expandtab
 set smartindent
 set autoindent
 
-autocmd BufWritePre * :%s/\s\+$//e
+set number
+
+map <D-A-RIGHT> <C-w>l
+map <D-A-LEFT> <C-w>h
+map <D-A-DOWN> <C-w><C-w>
+map <D-A-UP> <C-w>w
 
 set hlsearch
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 nnoremap <Leader><Leader> :e#<CR>
+
+execute pathogen#infect()
+
+noremap <Leader>r :CommandTFlush<CR>
+
+let NERDTreeMapActivateNode='<right>'
+let NERDTtreeShowHidden=1
+nmap <leader>n :NerdTreeToggle<CR>
+nmap <leader>j :NerdTreeFind<CR>
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:gitgutter_sign_column_always=1
+
+let g:lightline = {
+      \ 'colorscheme': 'molokai',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightlineFugitive',
+      \   'readonly': 'LightlineReadonly',
+      \   'modified': 'LightlineModified'
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! LightlineModified()
+    if &filetype == "help"
+          return ""
+    elseif &modified
+          return "+"
+    elseif &modifiable
+          return ""
+    else
+          return ""
+    endif
+endfunction
+
+function! LightlineReadonly()
+
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? '⭠ '.branch : ''
+  endif
+return ''
+endfunction

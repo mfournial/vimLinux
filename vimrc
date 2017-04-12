@@ -16,8 +16,8 @@ set history=120
 
 filetype indent on
 set nowrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=3
+set shiftwidth=3
 set expandtab
 set smartindent
 set autoindent

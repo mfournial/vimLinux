@@ -7,23 +7,20 @@ set nocompatible
 filetype on
 colorscheme monokai
 
+filetype indent on
 filetype plugin indent on
 
 set colorcolumn=80
-
 set hidden
 set history=120
-
-filetype indent on
+set number
 set nowrap
+set noshowmode
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
-
-set number
-
 set hlsearch
 
 map <D-A-RIGHT> <C-w>l
@@ -42,11 +39,15 @@ let NERDTtreeShowHidden=1
 nmap <leader>n :NerdTreeToggle<CR>
 nmap <leader>j :NerdTreeFind<CR>
 
-set noshowmode
-
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
- 
+
+" Set proper syntax highlighting 
+autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md set spell
+autocmd BufRead,BufNewFile *.asm set filetype=nasm
+
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

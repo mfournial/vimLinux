@@ -23,10 +23,26 @@ set smartindent
 set autoindent
 set hlsearch
 
+" time will decide which one I use the most
+imap jj <Esc>
+imap jk <Esc>
+
+" TODO to be mapped to same as mac cmd
 map <D-A-RIGHT> <C-w>l
 map <D-A-LEFT> <C-w>h
 map <D-A-DOWN> <C-w><C-w>
 map <D-A-UP> <C-w>W
+
+if has("autocmd")
+    au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+      au InsertEnter,InsertChange *
+          \ if v:insertmode == 'i' | 
+          \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+          \ elseif v:insertmode == 'r' |
+          \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+          \ endif
+        au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+      endif
 
 nnoremap <Leader><Leader> :e#<CR>
  

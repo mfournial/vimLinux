@@ -7,6 +7,7 @@
 "
 " <Leader> c <Space> - toggle line comment
 " <Leader> c s - toggle sexy line comment 
+
 set nocompatible
 
 filetype on
@@ -56,7 +57,7 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
-" Syntaxic plugin config
+" Syntastic plugin config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -66,7 +67,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_haskell_checkers = ['haskell', 'cabal']
+let g:syntastic_haskell_checkers = ['haskell']
 
 if has("autocmd")
     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!

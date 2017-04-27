@@ -2,6 +2,11 @@
 " is vim worth the time I put in it?
 " plus gonna have to do it on my Mac now -_-
 
+" 
+" Man 
+"
+" <Leader> c <Space> - toggle line comment
+" <Leader> c s - toggle sexy line comment 
 set nocompatible
 
 filetype on
@@ -44,6 +49,24 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Mapping for Haskell syntax
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" Syntaxic plugin config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_haskell_checkers = ['haskell', 'cabal']
 
 if has("autocmd")
     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!

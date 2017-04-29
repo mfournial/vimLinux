@@ -29,9 +29,6 @@ set smartindent
 set autoindent
 set hlsearch
 
-" time will decide which one I use the most
-imap jj <Esc>
-imap jk <Esc>
 
 " TODO to be mapped to same as mac cmd
 map <D-A-RIGHT> <C-w>l
@@ -41,6 +38,9 @@ map <D-A-UP> <C-w>W
 
 " Syntax checking
 map <Leader>s :SyntasticToggleMode<CR>
+
+" Don't copy the cintent of an overwritten selection
+vnoremap p "_dP
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

@@ -1,12 +1,14 @@
 " mfournial VIM config file
-" is vim worth the time I put in it?
-" plus gonna have to do it on my Mac now -_-
-
 " 
 " Man 
 "
+" vim-surround
+" cd <previous block marker> <new BM>
+"
+" vim-commenting
 " <Leader> c <Space> - toggle line comment
 " <Leader> c s - toggle sexy line comment 
+" 
 
 set nocompatible
 

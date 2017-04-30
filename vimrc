@@ -5,9 +5,10 @@
 " vim-surround
 " cd <previous block marker> <new BM>
 "
-" vim-commenting
+" nerdcommenter
 " <Leader> c <Space> - toggle line comment
 " <Leader> c s - toggle sexy line comment 
+" used to be <Leader> cc
 " 
 
 set nocompatible

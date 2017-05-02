@@ -9,6 +9,9 @@
 " <Leader> c <Space> - toggle line comment
 " <Leader> c s - toggle sexy line comment 
 " used to be <Leader> cc
+"
+" syntastic 
+" SyntasticCheck language -> will change Syntastic to the proper language
 " 
 
 set nocompatible
@@ -54,6 +57,10 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" fixes nasm and asm compiler issues
+ autocmd BufNewFile,BufRead *.asm SyntasticCheck asm
+
+ 
 " Mapping for Haskell syntax
 " map <silent> tw :GhcModTypeInsert<CR>
 " map <silent> ts :GhcModSplitFunCase<CR>

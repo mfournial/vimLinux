@@ -14,6 +14,7 @@
 " SyntasticCheck language -> will change Syntastic to the proper language
 " 
 
+" Doesn't bother with previous compatibility
 set nocompatible
 
 filetype on
@@ -28,8 +29,8 @@ set history=120
 set number
 set nowrap
 set noshowmode
-set tabstop=2
-set shiftwidth=2
+set tabstop=3
+set shiftwidth=3
 set expandtab
 set smartindent
 set autoindent

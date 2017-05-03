@@ -25,6 +25,7 @@ filetype plugin indent on
 set colorcolumn=80
 set hidden
 set history=120
+set clipboard=unnamed
 set number
 set nowrap
 set noshowmode

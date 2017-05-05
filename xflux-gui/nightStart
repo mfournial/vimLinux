@@ -1,0 +1,2 @@
+python ~/.vim/xflux-gui/download-xflux.py
+PATH=`pwd`:$PATH PYTHONPATH=`pwd`/src:$PYTHONPATH ~/.vi/.xflux-gui/fluxgui &

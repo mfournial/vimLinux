@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=f.lux indicator applet
+Comment=Better lighting for your computer
+Terminal=false
+Icon=fluxgui
+Exec=fluxgui
+Type=Application
+Categories=Utility;
+

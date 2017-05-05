@@ -1,0 +1,97 @@
+fluxgui (1.1.10~pre) wily; urgency=low
+
+  * fix https://github.com/xflux-gui/xflux-gui/issues/51: some of
+    the the color temps I added in 1.1.9 were not actually supported :P
+  * fix gtk-icon-theme related warnings. These were innocuous, but
+    mentioned in most bug reports.
+  * fix https://github.com/xflux-gui/xflux-gui/issues/35: screen color
+    was not reset to normal when closing fluxgui.
+  * fix https://github.com/xflux-gui/xflux-gui/issues/38: remove confusing
+    GUI element.
+  * fix https://github.com/xflux-gui/xflux-gui/issues/16: previewing the
+    already chosen color during the daytime didn't work.
+
+ -- Nathan Collins <nathan.collins@gmail.com>  <add date here when releasing>
+
+fluxgui (1.1.9) wily; urgency=low
+
+  * remove pid file / lock file. We have several bug reports about fluxgui
+    failing to start due to stale pid files, but I doubt anyone has the problem
+    of accidentally starting multiple copies of fluxgui. We can revisit this
+    if it turns out not having the pid file causes problems.
+  * fix bug where preview did not work for already chosen temperature.
+  * add more color options to the preferences GUI. Some of these options
+    used to be supported in older versions, but had gone away at some point.
+
+ -- Nathan Collins <nathan.collins@gmail.com>  Sat, 23 Jul 2016 16:28:45 -0700
+
+fluxgui (1.1.8) lucid; urgency=low
+
+  * add in python-pexpect as a dependency 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Wed, 08 Sep 2010 12:12:16 +0200
+
+fluxgui (1.1.7-0ubuntu1) lucid; urgency=low
+
+  * handle xflux closing more gracefully (thanks to axonxorz) 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Sat, 31 Jul 2010 15:29:01 +0200
+
+fluxgui (1.1.6-0ubuntu1) lucid; urgency=low
+
+  * make the preview button preview the selected value instead of current
+  * update xflux
+  * improved KDE support (needs testing)
+
+ -- Kilian Valkhof <kilian@ktop3>  Thu, 29 Jul 2010 14:32:55 +0200
+
+fluxgui (1.1.5-0ubuntu1) lucid; urgency=low
+
+  * remove any stray lock files if xflux can't be started (by seancron) 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Mon, 26 Jul 2010 23:15:51 +0200
+
+fluxgui (1.1.4-0ubuntu1) lucid; urgency=low
+
+  * fix problems with the first start of the application when there are no settings yet 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Mon, 26 Jul 2010 17:46:41 +0200
+
+fluxgui (1.1.3-0ubuntu1) lucid; urgency=low
+
+  * clean up properly after a keyboardinterrupt 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Mon, 26 Jul 2010 14:05:51 +0200
+
+fluxgui (1.1.2-0ubuntu1) lucid; urgency=low
+
+  * add a close button to the preferences pane 
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Mon, 26 Jul 2010 12:08:10 +0200
+
+fluxgui (1.1.1-0ubuntu1) lucid; urgency=low
+
+  * update some debian settings
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Sun, 25 Jul 2010 14:18:19 +0200
+
+fluxgui (1.1.0-0ubuntu1) lucid; urgency=low
+
+  * prevent fluxgui from starting more than once
+  * implement a preview button
+  * implement an autostart function
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Thu, 15 Jul 2010 21:08:59 +0200
+
+fluxgui (1.0.0-0ubuntu1) lucid; urgency=low
+
+  * gnome indicator applet for xflux
+  * own logo
+  * starts xflux automatically
+  * adapts icon to lucid style
+  * allows on/off toggling of xflux
+  * saves the latitude/zipcode settings in gconf
+  * opens preferences window if latitude/zipcode is not yet set
+
+ -- Kilian Valkhof <kilian@kilianvalkhof.com>  Tue, 15 Jun 2010 22:14:58 +0200
+

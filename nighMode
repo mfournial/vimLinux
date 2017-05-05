@@ -1,0 +1,2 @@
+python download-xflux.py
+PATH=`pwd`:$PATH PYTHONPATH=`pwd`/src:$PYTHONPATH ./fluxgui &

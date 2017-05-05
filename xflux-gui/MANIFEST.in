@@ -1,0 +1,4 @@
+include COPYING MANIFEST MANIFEST.in README fluxgui xflux
+recursive-include *.svg *.desktop
+recursive-include *.py *.glade
+

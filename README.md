@@ -7,3 +7,6 @@ I've got to say I put more effort in it
 
 ## What this doesn't give you:  
 ghc-mod for instant haskell debugging
+
+## In construction
+User manual

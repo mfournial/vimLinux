@@ -11,8 +11,11 @@
 " used to be <Leader> cc
 "
 " syntastic 
-" SyntasticCheck language -> will change Syntastic to the proper language
+" SyntasticCheck [language] -> will change Syntastic to the proper language
 " 
+" Nerd tree 
+" <Leader>n -> toggle
+" <Leader>j -> find
 
 set nocompatible
 

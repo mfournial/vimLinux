@@ -17,14 +17,20 @@
 " <Leader>n -> toggle
 " <Leader>j -> find
 
+" Doesn't bother with previous compatibility
 set nocompatible
 
+" Sets syntactic & highlighting
 filetype on
+
+" Themes to be found in .vim/colors
 colorscheme monokai
 
+" plugin indentation (Haskell IDE, JAva, Ruby)
 filetype indent on
 filetype plugin indent on
 
+" set are all documented in :h 
 set colorcolumn=80
 set hidden
 set history=120
@@ -45,7 +51,7 @@ map <D-A-LEFT> <C-w>h
 map <D-A-DOWN> <C-w><C-w>
 map <D-A-UP> <C-w>W
 
-" Syntax checking
+" TODO meger shortcut (syntax checking)
 map <Leader>s :SyntasticToggleMode<CR>
 
 " Don't copy the cintent of an overwritten selection

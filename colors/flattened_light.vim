@@ -2,6 +2,7 @@
 " Maintainer:   Romain Lafourcade (romainlafourcade@gmail.com)
 " Description:  Light Solarized, without the bullshit.
 
+set t_Co=256
 hi clear
 
 if exists('syntax_on')
@@ -10,6 +11,7 @@ endif
 
 let colors_name = 'flattened_light'
 
+set t_Co=256
 hi Normal                                  cterm=NONE  ctermfg=11  ctermbg=15  guifg=#657b83  guibg=#fdf6e3  gui=NONE
 
 set background=light

@@ -24,7 +24,7 @@ set nocompatible
 filetype on
 
 " Themes to be found in .vim/colors
-colorscheme monokai
+colorscheme flattened_light 
 
 " plugin indentation (Haskell IDE, JAva, Ruby)
 filetype indent on
@@ -44,6 +44,8 @@ set smartindent
 set autoindent
 set hlsearch
 
+" instert TAB if shift + tab
+inoremap <S-Tab> <C-V><Tab>
 
 " TODO to be mapped to same as mac cmd
 map <D-A-RIGHT> <C-w>l
@@ -123,7 +125,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:gitgutter_sign_column_always=1
 
 let g:lightline = {
-      \ 'colorscheme': 'molokai',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]

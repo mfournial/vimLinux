@@ -169,10 +169,15 @@ function! LightlineFugitive()
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-" function! LightlineFugitive()
-"   if exists("*fugitive#head")
-"     let branch = fugitive#head()
-"     return branch !=# '' ? ''.branch : ''
-"   endif
-" return ''
-" endfunction
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+return ''
+endfunction
+
+" Saves the hidden files somewhere else
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//

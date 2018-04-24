@@ -37,8 +37,8 @@ set history=120
 set number
 set nowrap
 set noshowmode
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
@@ -105,12 +105,12 @@ execute pathogen#infect()
  
 noremap <Leader>r :CommandTFlush<CR>
  
-let NERDTreeMapActivateNode='<right>'
-let NERDTtreeShowHidden=1
+"let NERDTreeMapActivateNode='<right>'
+"let NERDTtreeShowHidden=1
 nmap <leader>n :NerdTreeToggle<CR>
 nmap <leader>j :NerdTreeFind<CR>
-
-autocmd VimEnter * NERDTree
+"
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 " Set proper syntax highlighting 
@@ -119,8 +119,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.git']
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:gitgutter_sign_column_always=1
 

@@ -1,1 +1,5 @@
+#!/bin/bash
 xmodmap ~/.vim/swapper
+xrdb .Xresources
+feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png.lexis
+redshift -O 3000
